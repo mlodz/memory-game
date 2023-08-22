@@ -1,0 +1,108 @@
+.MatchGame {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+header {
+  text-align: center;
+}
+
+button {
+  font-size: 1.2em;
+  margin: 0.5em 1em;
+  padding: 0.2em 1em;
+}
+
+h1 {
+  font-size: 3em;
+  padding: 0px;
+  margin: 0;
+}
+
+
+.card-grid {
+  position: relative;
+  padding: 2%;
+
+  .card {
+    cursor: pointer;
+    background-color: #fea;
+    padding: 0px;
+    border: 1px solid black;
+    display: inline-block;
+    text-align: center;
+    border-radius: 8%;
+
+    .char {
+
+    }
+  }
+  .card.hidden {
+
+    background: #36c;
+    background:
+      linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+      linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+      linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+      linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+      #36c;
+    background-size: 15px 30px;
+
+
+  }
+}
+
+
+/* Cards are displayed in a grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2%;
+}
+.card-grid > .card {
+  aspect-ratio: 2.5 / 3.0;
+}
+
+.large .card-grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+/* Each card is a query container so we can use cqw unit */
+.card {
+  container-name: gridcard;
+  container-type: inline-size;
+}
+
+@container gridcard (width > 1px) {
+  .char {
+    font-size: 80cqw; /* only available inside container query */
+  }
+}
+
+.MatchGameInner {
+  position: relative;
+}
+
+.winner-banner {
+  border: 1px solid blue;
+  background-color: #39d627f0;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top: 100px;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+}
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
